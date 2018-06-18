@@ -4,7 +4,6 @@ import { Observable, of } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
 
 import { Hero } from './hero';
-import { HEROES } from './mock-heroes';
 import { MessageService } from './message.service';
 
 const httpOptions = {
@@ -15,7 +14,7 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class HeroService {
-  private heroesUrl = 'api/heroes';  // URL to web api
+  private heroesUrl = 'http://localhost:8080/heroes-service/webapi/heroes';  // URL to web api
 
   constructor(private http: HttpClient, private messageService: MessageService) {
   }
